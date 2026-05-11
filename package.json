@@ -1,0 +1,21 @@
+{
+  "name": "be-extraordinary-website",
+  "version": "1.0.0",
+  "description": "Antwane Leater - Be Extraordinary Coaching Website",
+  "main": "be-extraordinary.html",
+  "scripts": {
+    "build": "echo 'Static site - no build required'",
+    "start": "echo 'Static site - use serve or live-server'"
+  },
+  "keywords": [
+    "coaching",
+    "execution",
+    "entrepreneur",
+    "static-site"
+  ],
+  "author": "Antwane Leater",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.2.1"
+  }
+}

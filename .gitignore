@@ -1,0 +1,15 @@
+# Vercel
+.vercel
+
+# IDE
+.vscode/
+.idea/
+.windsurf/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
