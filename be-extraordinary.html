@@ -402,6 +402,9 @@
     .footer-links a{font-size:var(--text-xs);color:var(--text-muted);transition:color var(--transition);letter-spacing:.04em;}
     .footer-links a:hover{color:var(--text);}
     .footer-mantra{font-family:var(--font-display);font-size:var(--text-sm);font-style:italic;color:var(--text-faint);}
+    .footer-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:var(--space-6);padding-top:var(--space-6);border-top:1px solid var(--border);}
+    .footer-business{font-family:var(--font-display);font-size:var(--text-base);font-weight:400;color:var(--be-ink);margin:0;}
+    .footer-date{font-size:var(--text-sm);color:var(--text-muted);margin:0;}
     .social-link{color:var(--text-muted);transition:color var(--transition);position:relative;}
     .social-link::before{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;background:var(--text-muted);transform:scaleX(0);transition:transform 200ms ease-out;}
     .social-link:hover{color:var(--text);transform:translateY(-1px);}
@@ -428,6 +431,16 @@
       footer{flex-direction:column;gap:var(--space-6);text-align:center;}
       .footer-left{flex-direction:column;gap:var(--space-3);}
       .footer-links{flex-wrap:wrap;justify-content:center;}
+      .big-cta-actions{flex-direction:column;}
+      .services-grid{grid-template-columns:1fr;}
+      .testimonials-grid{grid-template-columns:1fr;}
+      .testimonials-intro{flex-direction:column;align-items:flex-start;}
+      .quiz-cta{grid-template-columns:1fr;padding:var(--space-8);}
+      .quiz-cta-right{border-left:none;padding-left:0;border-top:1px solid var(--border);padding-top:var(--space-6);display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4);}
+      footer{flex-direction:column;gap:var(--space-6);text-align:center;}
+      .footer-left{flex-direction:column;gap:var(--space-3);}
+      .footer-links{flex-wrap:wrap;justify-content:center;}
+      .footer-bottom{flex-direction:column;gap:var(--space-2);text-align:center;}
       .big-cta-actions{flex-direction:column;}
     /* EXECUTION SYSTEM */
     .execution-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:var(--space-16);align-items:center;}
@@ -779,6 +792,10 @@
     </ul>
   </nav>
   <p class="footer-mantra">Excel. Exceed. Inspire.</p>
+  <div class="footer-bottom">
+    <p class="footer-business">Be Extraordinary</p>
+    <p class="footer-date"> 2026</p>
+  </div>
 </footer>
 
 <script>
