@@ -326,8 +326,12 @@
     /* ABOUT */
     .about-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:var(--space-16);align-items:center;}
     .about-photo-wrap{position:relative;}
-    .about-photo{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:var(--radius-lg);}
-    .about-photo-badge{position:absolute;bottom:var(--space-4);left:var(--space-4);background:var(--be-accent);border:1px solid var(--be-accent);border-radius:var(--radius-full);padding:var(--space-2) var(--space-4);font-size:var(--text-xs);font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--be-ink);}
+    .about-photo{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:50%;border:3px solid var(--be-accent);}
+    .about-photo-info{text-align:center;margin-top:var(--space-4);}
+    .about-name{font-family:var(--font-display);font-size:var(--text-lg);font-weight:400;line-height:1.2;color:var(--be-ink);margin-bottom:var(--space-1);}
+    .about-title{font-size:var(--text-sm);color:var(--text-muted);font-weight:500;margin:0;}
+    .about-quote{margin-top:var(--space-6);padding:var(--space-6);border-left:3px solid var(--be-accent);background:var(--surface);border-radius:var(--radius-md);}
+    .about-quote p{font-family:var(--font-display);font-size:var(--text-base);font-style:italic;color:var(--text-muted);line-height:1.6;margin:0;}
     .about-content{display:flex;flex-direction:column;gap:var(--space-8);align-items:center;}
     .about-title{font-family:var(--font-display);font-size:var(--text-2xl);font-weight:400;line-height:1.1;letter-spacing:-.02em;color:var(--be-ink);}
     .about-title em{font-style:italic;color:var(--text-muted);}
@@ -543,7 +547,10 @@
     <div class="about-grid">
       <div class="about-photo-wrap">
         <img src="./assets/me-no-bg.png" alt="Antwane Leater" class="about-photo">
-        <div class="about-photo-badge">FOUNDER</div>
+        <div class="about-photo-info">
+          <h3 class="about-name">Antwane Leater</h3>
+          <p class="about-title">Founder & Execution Specialist</p>
+        </div>
       </div>
       <div class="about-content">
         <h2 class="about-title" id="about-h">I excavate<br>what's <em>actually</em><br>stopping you.</h2>
@@ -557,6 +564,9 @@
           <span class="tag">Execution Systems</span>
         </div>
         <a href="https://silver-stream-pay.lovable.app" target="_blank" rel="noopener noreferrer" class="btn-primary" style="align-self:flex-start;margin-top:var(--space-4);">Work With Antwane →</a>
+        <blockquote class="about-quote">
+          <p>"Execution isn't about motivation—it's about systems. I build the framework that turns your goals into inevitable outcomes."</p>
+        </blockquote>
       </div>
     </div>
   </section>
