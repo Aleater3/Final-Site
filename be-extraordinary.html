@@ -11,10 +11,14 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;700&family=Bebas+Neue&family=Oswald:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@500;700;800;900&display=swap" rel="stylesheet">
 
   <style>
     :root {
+      --be-black: #070707;
+      --be-ink: #f4f1ea;
+      --be-muted: #77736c;
+      --be-line: rgba(255, 255, 255, 0.08);
       --font-display: 'Instrument Serif', Georgia, serif;
       --font-body: 'Inter', 'Helvetica Neue', sans-serif;
       --font-red-1: 'Playfair Display', Georgia, serif;
@@ -59,8 +63,8 @@
       --accent:#ff6600; --accent-hover:#cc5200; --inverse-text:#0f0f0e;
     }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-    html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;scroll-padding-top:80px;}
-    body{font-family:var(--font-body);font-size:var(--text-base);color:var(--text);background:var(--bg);line-height:1.6;min-height:100dvh;transition:background var(--transition),color var(--transition);}
+    html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;}
+    body{font-family:var(--font-body);font-size:var(--text-base);color:var(--be-ink);background:#090909;line-height:1.6;min-height:100dvh;}
     img{display:block;max-width:100%;height:auto;transition:transform 200ms ease-out;animation:float 6s ease-in-out infinite;}
     img:hover{transform:scale(1.02) rotate(2deg);}
     @keyframes float{0%,50%{transform:translateY(0px) rotate(0deg);}25%{transform:translateY(-10px) rotate(1deg);}75%{transform:translateY(0px) rotate(0deg);}}
@@ -139,25 +143,155 @@
     .nav-mobile-toggle span{display:block;width:22px;height:1.5px;background:var(--text);border-radius:2px;transition:transform var(--transition),opacity var(--transition);}
 
     /* HERO */
-    .hero{padding-top:130px;padding-bottom:var(--space-32);padding-inline:var(--space-8);max-width:var(--content-default);margin-inline:auto;display:grid;grid-template-columns:1fr auto;gap:var(--space-16);align-items:start;background:linear-gradient(135deg, #fff8f3 0%, #fef3e2 50%, #fff9f0 100%);border-radius:var(--radius-lg);margin-bottom:var(--space-8);box-shadow:0 8px 32px rgba(255,102,0,0.08);}
-    .hero-content{display:flex;flex-direction:column;gap:var(--space-8);}
-    .hero-logo{display:flex;align-items:flex-start;justify-content:flex-end;padding-top:var(--space-8);}
-    .hero-logo-img{width:120px;height:auto;border-radius:var(--radius-lg);box-shadow:0 8px 24px rgba(0,0,0,0.1);transition:transform 200ms ease-out;}
-    .hero-logo-img:hover{transform:scale(1.05) rotate(2deg);}
-    @media(max-width:768px){.hero{grid-template-columns:1fr;gap:var(--space-8);}.hero-logo{justify-content:center;padding-top:var(--space-4);}.hero-logo-img{width:100px;}}
-    .hero-eyebrow{display:inline-flex;align-items:center;gap:var(--space-2);font-size:var(--text-xs);font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);margin-bottom:var(--space-8);}
-    .hero-eyebrow::before{content:'';display:inline-block;width:24px;height:1px;background:var(--text-muted);}
-    .hero-heading{font-family:var(--font-display);font-size:var(--text-hero);font-weight:400;line-height:.95;letter-spacing:-.02em;color:var(--text);margin-bottom:var(--space-10);}
-    .hero-heading em{font-style:italic;color:var(--text-muted);}
-    .hero-sub-row{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-16);align-items:end;border-top:1px solid var(--border);padding-top:var(--space-8);margin-top:var(--space-8);}
-    .hero-desc{font-size:var(--text-base);color:var(--text-muted);line-height:1.7;max-width:48ch;}
-    .hero-cta-group{display:flex;gap:var(--space-4);align-items:center;justify-content:flex-end;}
-    .btn-primary{display:inline-flex;align-items:center;gap:var(--space-2);font-size:var(--text-sm);font-weight:600;padding:14px 28px;border-radius:var(--radius-full);background:var(--gradient-1);color:var(--inverse-text);transition:all 200ms cubic-bezier(0.16,1,0.3,1);transform:translateZ(0);box-shadow:0 4px 12px rgba(255,102,0,0.3);white-space:nowrap;position:relative;overflow:hidden;}
-    .btn-primary::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);transition:left 0.5s;}
-    .btn-primary:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 8px 24px rgba(255,102,0,0.4);}
-    .btn-primary:hover::before{left:100%;}
-    .btn-ghost{display:inline-flex;align-items:center;gap:var(--space-2);font-size:var(--text-sm);font-weight:500;color:var(--text-muted);transition:all 200ms cubic-bezier(0.16,1,0.3,1);transform:translateZ(0);position:relative;}
-    .btn-ghost:hover{color:var(--text);transform:translateY(-1px);}
+    .be-hero {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 20% 35%, rgba(255,255,255,0.055), transparent 28%),
+        linear-gradient(90deg, #10100f 0%, #0b0b0a 45%, #050505 100%);
+      overflow: hidden;
+    }
+
+    .be-nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      gap: clamp(18px, 2.2vw, 34px);
+      padding: 0 clamp(22px, 3vw, 54px);
+      border-bottom: 1px solid var(--be-line);
+      font-family: Inter, sans-serif;
+    }
+
+    .be-nav a {
+      color: rgba(244, 241, 234, 0.58);
+      text-decoration: none;
+      font-size: 16px;
+      letter-spacing: 0;
+      transition: color 180ms ease;
+    }
+
+    .be-nav a:hover {
+      color: var(--be-ink);
+    }
+
+    .be-hero-inner {
+      min-height: calc(100vh - 72px);
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      align-items: center;
+      gap: clamp(28px, 4vw, 64px);
+      padding: clamp(32px, 5vw, 72px) clamp(22px, 5vw, 96px);
+    }
+
+    .be-hero-copy h1 {
+      margin: 0;
+      font-family: "Instrument Serif", Georgia, serif;
+      font-weight: 400;
+      line-height: 0.9;
+      letter-spacing: 0;
+      font-size: clamp(78px, 8.6vw, 150px);
+      color: var(--be-ink);
+    }
+
+    .be-hero-copy span,
+    .be-hero-copy em {
+      display: block;
+    }
+
+    .be-hero-copy em {
+      color: var(--be-muted);
+      font-style: italic;
+    }
+
+    .be-logo-panel {
+      width: 100%;
+      max-width: 760px;
+      justify-self: end;
+      aspect-ratio: 1.28 / 1;
+      background: #000;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(22px, 3vw, 46px);
+    }
+
+    .be-mark {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 0;
+    }
+
+    .be-word {
+      font-family: Inter, Arial, sans-serif;
+      font-size: clamp(118px, 18vw, 280px);
+      font-weight: 900;
+      line-height: 0.78;
+      letter-spacing: -0.08em;
+      text-align: center;
+    }
+
+    .be-bracket {
+      width: 84%;
+      height: clamp(34px, 5vw, 72px);
+      margin: clamp(12px, 1.5vw, 22px) auto 0;
+      border-left: clamp(18px, 2.5vw, 38px) solid #fff;
+      border-right: clamp(18px, 2.5vw, 38px) solid #fff;
+      border-bottom: clamp(18px, 2.5vw, 38px) solid #fff;
+    }
+
+    .be-tagline {
+      margin-top: clamp(22px, 3vw, 42px);
+      font-family: Inter, Arial, sans-serif;
+      font-size: clamp(32px, 5vw, 70px);
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: 0.01em;
+      white-space: nowrap;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .be-nav {
+        flex-wrap: wrap;
+        height: auto;
+        padding-block: 18px;
+        gap: 14px 22px;
+      }
+
+      .be-hero-inner {
+        grid-template-columns: 1fr;
+        align-items: start;
+      }
+
+      .be-logo-panel {
+        justify-self: start;
+        max-width: none;
+      }
+
+      .be-tagline {
+        white-space: normal;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .be-hero-copy h1 {
+        font-size: clamp(64px, 20vw, 96px);
+      }
+
+      .be-logo-panel {
+        aspect-ratio: 1 / 0.92;
+      }
+
+      .be-word {
+        font-size: clamp(92px, 30vw, 150px);
+      }
+
+      .be-tagline {
+        font-size: clamp(26px, 9vw, 40px);
+      }
+    }
 
     /* SECTIONS */
     .section{padding-block:clamp(var(--space-16),8vw,var(--space-32));padding-inline:var(--space-8);max-width:var(--content-default);margin-inline:auto;opacity:0;animation:fadeReveal 1.2s ease-out forwards;}
@@ -331,24 +465,35 @@
 <main id="main">
 
   <!-- HERO -->
-  <section class="hero" aria-labelledby="hero-h">
-    <div class="hero-content">
-      <p class="hero-eyebrow">Moreno Valley, CA — <span class="gradient-text-1">Execution</span> Strategist</p>
-      <h1 class="hero-heading" id="hero-h">
-        <span class="gradient-text-2">STOP</span><br><em>stalling.</em><br><span class="gradient-text-3">START</span><br><span class="purple-accent">executing.</span>
-      </h1>
-      <div class="hero-sub-row">
-        <p class="hero-desc">I'm Antwane Leater — execution strategist for driven people who are full of ideas and short on results. I don't hype you up. I pinpoint exactly what's blocking you, then build the system that makes progress unavoidable.</p>
-        <div class="hero-cta-group">
-          <a href="https://silver-stream-pay.lovable.app" target="_blank" rel="noopener noreferrer" class="btn-primary">Book Your Forensic Audit →</a>
-          <a href="#quiz" class="btn-ghost">Take the Quiz ↓</a>
-        </div>
+  <header class="be-hero">
+    <nav class="be-nav" aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#results">Results</a>
+      <a href="#framework">Framework</a>
+      <a href="/quiz">Free Quiz</a>
+      <a href="#book">Book Audit</a>
+    </nav>
+
+    <section class="be-hero-inner">
+      <div class="be-hero-copy">
+        <h1>
+          <span>Stop</span>
+          <em>stalling.</em>
+          <span>Start</span>
+          <span>executing.</span>
+        </h1>
       </div>
-    </div>
-    <div class="hero-logo">
-      <img src="./assets/site-logo.jpg" alt="Be Extraordinary Logo" class="hero-logo-img" loading="eager">
-    </div>
-  </section>
+
+      <div class="be-logo-panel" aria-label="Be Extraordinary">
+        <div class="be-mark">
+          <div class="be-word">Be.</div>
+          <div class="be-bracket"></div>
+        </div>
+        <div class="be-tagline">BE EXTRAORDINARY</div>
+      </div>
+    </section>
+  </header>
 
   <hr class="divider">
 
