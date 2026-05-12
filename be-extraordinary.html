@@ -463,6 +463,17 @@
     .phase-desc{font-size:var(--text-sm);color:var(--text-muted);line-height:1.7;max-width:48ch;}
     @media(max-width:768px){.phases-grid{grid-template-columns:1fr;}.phase-card{min-height:300px;}}
 
+    /* USEFUL SECTION */
+    .useful-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-6);}
+    .useful-card{padding:var(--space-8);border:1px solid var(--border);border-radius:var(--radius-lg);display:flex;flex-direction:column;align-items:center;text-align:center;gap:var(--space-4);transition:all 300ms ease;background:var(--surface);}
+    .useful-card:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 12px 24px rgba(255,102,0,0.15);}
+    .useful-icon{font-size:3rem;margin-bottom:var(--space-2);display:flex;align-items:center;justify-content:center;width:80px;height:80px;background:linear-gradient(135deg, var(--accent), var(--accent-hover));border-radius:var(--radius-lg);color:var(--inverse-text);transition:transform 300ms ease;}
+    .useful-card:hover .useful-icon{transform:scale(1.1);}
+    .useful-name{font-family:var(--font-display);font-size:var(--text-xl);font-weight:400;letter-spacing:-.02em;line-height:1.2;color:var(--text);margin:0;}
+    .useful-desc{font-family:var(--font-body);font-size:var(--text-sm);color:var(--text-muted);line-height:1.6;margin:0;}
+    @media(max-width:1024px){.useful-grid{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:768px){.useful-grid{grid-template-columns:1fr;}.useful-card{padding:var(--space-6);}}
+
   </style>
 </head>
 <body>
