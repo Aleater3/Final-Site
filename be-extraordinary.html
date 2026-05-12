@@ -390,21 +390,24 @@
     .big-cta-actions{display:flex;gap:var(--space-4);justify-content:center;align-items:center;position:relative;z-index:1;}
 
     /* FOOTER */
-    footer{border-top:1px solid var(--border);padding:var(--space-10) var(--space-8);display:flex;align-items:center;justify-content:space-between;max-width:var(--content-default);margin-inline:auto;}
-    .footer-left{display:flex;align-items:center;gap:var(--space-8);}
-    .footer-logo img{height:28px;width:auto;}
-    .footer-copy{font-size:var(--text-xs);color:var(--text-faint);}
-    .footer-links{display:flex;gap:var(--space-6);}
-    .footer-links a{font-size:var(--text-xs);color:var(--text-muted);transition:color var(--transition);letter-spacing:.04em;}
+    footer{border-top:1px solid var(--border);padding:var(--space-16) var(--space-8);background:var(--bg);}
+    .footer-content{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:var(--space-12);max-width:var(--content-default);margin-inline:auto;}
+    .footer-section{display:flex;flex-direction:column;gap:var(--space-4);}
+    .footer-logo{margin-bottom:var(--space-4);}
+    .footer-logo img{height:32px;width:auto;}
+    .footer-tagline{font-family:var(--font-display);font-size:var(--text-base);font-weight:400;color:var(--text);margin:0 0 var(--space-2) 0;}
+    .footer-copyright{font-size:var(--text-sm);color:var(--text-muted);margin:0;}
+    .footer-heading{font-family:var(--font-display);font-size:var(--text-sm);font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--text);margin:0 0 var(--space-4) 0;}
+    .footer-links{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:var(--space-2);}
+    .footer-links li{margin:0;}
+    .footer-links a{font-size:var(--text-sm);color:var(--text-muted);text-decoration:none;transition:color var(--transition);display:inline-block;}
     .footer-links a:hover{color:var(--text);}
-    .footer-mantra{font-family:var(--font-display);font-size:var(--text-sm);font-style:italic;color:var(--text-faint);}
-    .footer-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:var(--space-6);padding-top:var(--space-6);border-top:1px solid var(--border);}
-    .footer-business{font-family:var(--font-display);font-size:var(--text-base);font-weight:400;color:var(--text);margin:0;}
-    .footer-date{font-size:var(--text-sm);color:var(--text-muted);margin:0;}
-    .social-link{color:var(--text-muted);transition:color var(--transition);position:relative;}
-    .social-link::before{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;background:var(--text-muted);transform:scaleX(0);transition:transform 200ms ease-out;}
-    .social-link:hover{color:var(--text);transform:translateY(-1px);}
-    .social-link:hover::before{transform:scaleX(1);}
+    .footer-social{display:flex;gap:var(--space-4);}
+    .footer-social a{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:var(--radius-md);background:var(--surface);border:1px solid var(--border);color:var(--text-muted);transition:all var(--transition);}
+    .footer-social a:hover{color:var(--accent);border-color:var(--accent);transform:translateY(-2px);}
+    .footer-social svg{width:20px;height:20px;}
+    @media(max-width:1024px){.footer-content{grid-template-columns:1fr 1fr;gap:var(--space-8);}}
+    @media(max-width:768px){footer{padding:var(--space-12) var(--space-6);}.footer-content{grid-template-columns:1fr;gap:var(--space-8);text-align:center;}.footer-social{justify-content:center;}}
 
     /* MOBILE */
     @media(max-width:768px){
@@ -796,25 +799,43 @@
 </main>
 
 <footer>
-  <div class="footer-left">
-    <div class="footer-logo"><img src="./assets/site-logo.jpg" alt="Be Extraordinary" width="28" height="28" loading="lazy" id="footer-logo"></div>
-    <p class="footer-copy"> 2026 Be Extraordinary. Antwane Leater.</p>
-  </div>
-  <nav aria-label="Footer">
-    <ul class="footer-links" role="list">
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#testimonials">Results</a></li>
-      <li><a href="#phases">Framework</a></li>
-      <li><a href="./quiz.html" target="_blank" rel="noopener noreferrer">Execution Blocker Quiz</a></li>
-      <li><a href="https://silver-stream-pay.lovable.app" target="_blank" rel="noopener noreferrer">Book Audit</a></li>
-      <li><a href="https://www.instagram.com/jopecuro/" target="_blank" rel="noopener noreferrer" class="social-link">Instagram</a></li>
-    </ul>
-  </nav>
-  <p class="footer-mantra">Excel. Exceed. Inspire.</p>
-  <div class="footer-bottom">
-    <p class="footer-business">Be Extraordinary</p>
-    <p class="footer-date"> 2026</p>
+  <div class="footer-content">
+    <div class="footer-section">
+      <div class="footer-logo"><img src="./assets/site-logo.jpg" alt="Be Extraordinary" width="32" height="32" loading="lazy" id="footer-logo"></div>
+      <p class="footer-tagline">Excel. Exceed. Inspire.</p>
+      <p class="footer-copyright"> 2026 Be Extraordinary. Antwane Leater.</p>
+    </div>
+    
+    <div class="footer-section">
+      <h3 class="footer-heading">Services</h3>
+      <ul class="footer-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#testimonials">Results</a></li>
+        <li><a href="#phases">Framework</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-section">
+      <h3 class="footer-heading">Resources</h3>
+      <ul class="footer-links">
+        <li><a href="#execution">Execution System</a></li>
+        <li><a href="#useful">Tools</a></li>
+        <li><a href="./quiz.html" target="_blank" rel="noopener noreferrer">Execution Blocker Quiz</a></li>
+        <li><a href="https://silver-stream-pay.lovable.app" target="_blank" rel="noopener noreferrer">Book Audit</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-section">
+      <h3 class="footer-heading">Connect</h3>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/jopecuro/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.07 3.225-1.654 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0 2.163c-3.165 0-3.5.011-4.748.064-2.896.138-3.438 1.557-3.563 3.563-.064 1.248-.075 1.583-.075 4.748 0 3.165.011 3.5.075 4.748.125 2.006.667 3.425 2.667 3.563 3.563.064 1.248.075 1.583.075 4.748 0 3.165-.011 3.5-.075 4.748-.138 2.896-1.557 3.425-3.563.064-1.248.075-1.583.075-4.748 0-3.165-.011-3.5-.075-4.748-.125-2.006-.667-3.425-2.667-3.563-3.563-.064-1.248-.075-1.583-.075-4.748zm-4.907 1.949v-3.597h1.201l.088.878c.288-.513.672-.878 1.152-1.083.48-.204.936-.306 1.368-.306.96 0 1.584.312 1.872.936.288.624.432 1.44.432 2.448 0 1.008-.144 1.824-.432 2.448-.288.624-.912.936-1.872.936-.432 0-.888-.102-1.368-.306-.48-.204-.864-.57-1.152-1.083l-.088.878h-1.201zm3.6 1.2c.576 0 1.008.192 1.296.576.288.384.432.96.432 1.728 0 .768-.144 1.344-.432 1.728-.288.384-.72.576-1.296.576-.576 0-1.008-.192-1.296-.576-.288-.384-.432-.96-.432-1.728 0-.768.144-1.344.432-1.728.288-.384.72-.576 1.296-.576z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
   </div>
 </footer>
 
