@@ -420,9 +420,11 @@
     .btn-ghost:hover{background:var(--surface);border-color:var(--accent);color:var(--accent);transform:translateY(-1px);}
 
     /* CUSTOM STYLES */
-    .blue-text{color:var(--blue);}
+    .blue-text{color:var(--blue) !important;}
     .no-hover{transition:none !important;}
     .no-hover:hover{transform:none !important;}
+    img.no-hover{transform:none !important;}
+    img.no-hover:hover{transform:none !important;}
 
     /* MOBILE */
     @media(max-width:768px){
@@ -575,7 +577,7 @@
     <p class="section-label">About</p>
     <div class="about-grid">
       <div class="about-photo-wrap">
-        <img src="./assets/me-no-bg.png" alt="Antwane Leater" class="about-photo">
+        <img src="./assets/me-no-bg.png" alt="Antwane Leater" class="about-photo no-hover">
         <div class="about-photo-info">
           <h3 class="about-name">Antwane Leater</h3>
           <p class="about-title">Founder & Execution Specialist</p>
