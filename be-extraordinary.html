@@ -419,6 +419,11 @@
     .btn-ghost{display:inline-flex;align-items:center;gap:var(--space-2);font-size:var(--text-sm);font-weight:600;padding:12px 24px;border-radius:var(--radius-full);background:transparent;color:var(--text);border:1px solid var(--border);text-decoration:none;transition:all var(--transition);}
     .btn-ghost:hover{background:var(--surface);border-color:var(--accent);color:var(--accent);transform:translateY(-1px);}
 
+    /* CUSTOM STYLES */
+    .blue-text{color:var(--blue);}
+    .no-hover{transition:none !important;}
+    .no-hover:hover{transform:none !important;}
+
     /* MOBILE */
     @media(max-width:768px){
       nav{padding:var(--space-4);}
@@ -531,14 +536,14 @@
       <div class="be-hero-copy">
         <h1>
           <span>Stop</span>
-          <em>stalling.</em>
+          <em class="blue-text">stalling.</em>
           <span>Start</span>
           <span>executing.</span>
         </h1>
       </div>
 
       <div class="be-logo-panel" aria-label="Be Extraordinary">
-        <img src="./assets/site-logo.jpg" alt="Be Extraordinary Logo" />
+        <img src="./assets/site-logo.jpg" alt="Be Extraordinary Logo" class="no-hover" />
       </div>
     </section>
   </header>
