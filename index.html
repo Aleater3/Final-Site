@@ -478,15 +478,18 @@
 
 
     /* PHASES */
-    .phases-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:var(--space-6);}
-    .phase-card{padding:var(--space-8);border:1px solid var(--border);border-radius:var(--radius-lg);background:var(--surface);display:flex;flex-direction:column;gap:var(--space-4);height:auto;transition:var(--transition);overflow:hidden;}
+    .phases-section{max-width:1200px;}
+    .phases-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-4);align-items:stretch;margin-top:var(--space-12);}
+    .phase-card{padding:var(--space-6);border:1px solid var(--border);border-radius:var(--radius-lg);background:var(--surface);display:flex;flex-direction:column;gap:var(--space-4);height:100%;min-height:360px;transition:var(--transition);overflow:hidden;box-shadow:0 16px 40px rgba(0,0,0,0.06);}
     .phase-card:hover{border-color:var(--accent);transform:translateY(-4px);}
-    .phase-video-container{width:100%;aspect-ratio:16/9;border-radius:var(--radius-md);overflow:hidden;background:#000;position:relative;}
+    .phase-video-container{width:100%;height:150px;border-radius:var(--radius-md);overflow:hidden;background:#000;position:relative;flex:0 0 auto;}
     .phase-card video{width:100%;height:100%;object-fit:cover;opacity:.8;transition:var(--transition);display:block;}
     .phase-card:hover video{opacity:1;}
     .phase-num{font-size:var(--text-xs);font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);}
-    .phase-name{font-family:var(--font-display);font-size:var(--text-xl);font-weight:400;letter-spacing:-.02em;line-height:1.1;color:var(--text);}
-    .phase-desc{font-size:var(--text-sm);color:var(--text-muted);line-height:1.7;max-width:48ch;}
+    .phase-name{font-family:var(--font-display);font-size:clamp(1.5rem,1.2rem + .8vw,2rem);font-weight:400;letter-spacing:-.02em;line-height:1.1;color:var(--text);}
+    .phase-desc{font-size:var(--text-sm);color:var(--text-muted);line-height:1.65;max-width:36ch;}
+    @media(max-width:1100px){.phases-grid{grid-template-columns:repeat(2,minmax(0,360px));justify-content:center;}.phase-video-container{height:180px;}}
+    @media(max-width:768px){.phases-grid{grid-template-columns:minmax(0,1fr);gap:var(--space-6);}.phase-card{min-height:auto;padding:var(--space-6);}.phase-video-container{height:auto;aspect-ratio:16/9;}}
 
     /* USEFUL SECTION */
     .useful-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-6);}
@@ -736,7 +739,7 @@
   <hr class="divider">
 
   <!-- PHASES -->
-  <section class="section wrap fade-in" id="phases" aria-labelledby="phases-h">
+  <section class="section wrap fade-in phases-section" id="phases" aria-labelledby="phases-h">
     <div id="align"></div>
     <p class="section-label">The Framework</p>
     <h2 class="services-h2" id="phases-h">Four phases.<br><em>One transformation.</em></h2>
